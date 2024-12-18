@@ -77,11 +77,11 @@ def check_plural(user_plural):
     if user_plural.lower() == correct_plural.lower():
         state["score"] += 1
         state["level_scores"][state["current_level"]]["score"] += 1
-        feedback = f"✅ Correct! '{correct_plural}' is the plural form of '{singular}'."
+        feedback = f"✅ Correct! '{correct_plural}' is the plural form of '{singular}'. Click 'Show the Noun' to continue."
         # Remove the correctly answered noun
         state["remaining_nouns"] = state["remaining_nouns"].drop(state["remaining_nouns"].index[index])
     else:
-        feedback = f"❌ Incorrect. The correct plural form is '{correct_plural}' for '{singular}'. This will appear again."
+        feedback = f"❌ Incorrect. The correct plural form is '{correct_plural}' for '{singular}'. This will appear again. Click 'Show the Noun' to continue."
 
     st.session_state.feedback = feedback
 
